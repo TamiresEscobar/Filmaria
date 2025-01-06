@@ -1,0 +1,32 @@
+.carousel-container{
+    width: 100%;
+}
+.slick-list{
+    height: 650px !important;
+}
+.image_banner{
+    width: 100%;
+    aspect-ratio: 2/1;
+}
+.slick-next{
+    right: 3rem !important;
+}
+.slick-prev{
+    left: 3rem !important;
+}
+.slick-prev, .slick-next{
+    top: 50% !important;
+    z-index: 9;
+    width: 24px !important;
+    height: 24px !important;
+}
+.slick-prev::before, .slick-next::before{
+    font-size: 24px !important;
+    color: #FFF;
+}
+.slick-dots li.slick-active button:before{
+    color: #2a6d21;
+}
+.slick-dots li button:before{
+    color: #fff;
+}
