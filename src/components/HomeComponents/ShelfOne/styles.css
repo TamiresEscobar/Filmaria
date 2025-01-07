@@ -1,0 +1,50 @@
+.container_shelf_one{
+    color: #fff;
+    margin: 160px 0;
+    height: 400px;
+}
+.container_shelf_one h2 {
+    font-size: 30px;
+    padding: 5px;
+}
+.container_shelf_one .slick-slider {
+    border: 1px solid red;
+}
+.card_shelf_one{
+    display: flex !important;
+    flex-direction: column;
+    cursor: pointer;
+}
+.container_shelf_one .image_shelf_one{
+    height: 400px;
+    width: 100%;
+    object-fit: cover !important;
+}
+.container_shelf_one .slick-slide{
+    border: 1px solid blue;
+    display: flex !important;
+    gap: 8px !important;
+    margin: 0 28px;
+    width: 350px !important;
+}
+
+.container_shelf_one .slick-next{
+    right: 3rem !important;
+}
+.container_shelf_one .slick-prev{
+    left: 3rem !important;
+}
+ .slick-prev, .slick-next{
+    top: 30% !important;
+    z-index: 9;
+    width: 24px !important;
+    height: 24px !important;
+}
+.container_shelf_one .slick-prev::before, .slick-next::before{
+    font-size: 30px !important;
+    color: #fc6a09;
+}
+.link_pdp, .link_pdp:active{
+    text-decoration: none;
+    color: #fff;
+}

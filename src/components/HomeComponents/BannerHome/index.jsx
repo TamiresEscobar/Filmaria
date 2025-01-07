@@ -3,11 +3,11 @@ import api from "../../../api/index";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './styles.css'
+import "./styles.css";
 
 const BannerHome = () => {
   const [listNewFilms, setListNewFilms] = useState([]);
-  console.log("🚀 ~ BannerHome ~ listNewFilms:", listNewFilms);
+  const [loading, setLoading] = useState(true);
 
   const options = {
     api_key: "04753c800f01e7aa9455d47085cbaa51",
@@ -20,13 +20,17 @@ const BannerHome = () => {
       const response = await api.get(`movie/now_playing`, {
         params: options,
       });
-      console.log(response);
 
       const checkedFilms = response.data.results;
       setListNewFilms(checkedFilms);
+      setLoading(false);
     }
     loadFilmes();
   }, []);
+
+  if (loading) {
+    return <div className="loading">Carregando...</div>;
+  }
 
   const settings = {
     dots: true,
@@ -34,8 +38,8 @@ const BannerHome = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000, // Slide change speed in ms
+    autoplay: true,
+    autoplaySpeed: 4000, // Slide change speed in ms
   };
 
   return (
@@ -44,7 +48,11 @@ const BannerHome = () => {
         <Slider {...settings}>
           {listNewFilms.map((item) => (
             <div key={item.id} className="content-list-film">
-              <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} alt={item.title} className="image_banner"/>
+              <img
+                src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+                alt={item.title}
+                className="image_banner"
+              />
             </div>
           ))}
         </Slider>
