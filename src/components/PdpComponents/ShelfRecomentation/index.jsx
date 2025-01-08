@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "./styles.css";
+import React, {useState, useEffect} from "react";
+import "../../HomeComponents/ShelfOne/styles.css";
 import api from "../../../api/index";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -7,21 +7,22 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { Link } from "react-router-dom";
 
-const ShelfOne = () => {
+const ShelfRecomentationPDP = ({recomendationChildrenComponent}) => {
+  const dateReacomedation = recomendationChildrenComponent.id
+  
   const [popularyFilm, setPopularyFilm] = useState([]);
 
   const options = {
     api_key: "04753c800f01e7aa9455d47085cbaa51",
     language: "pt-BR",
-    page: 1,
+    page: 2,
   };
 
   useEffect(() => {
     async function loadShelfOne() {
-      const response = await api.get(`movie/top_rated`, {
+      const response = await api.get(`movie/${dateReacomedation}/recommendations`, {
         params: options,
       });
-
       const checkedFilms = response.data.results.slice(0, 15);
       setPopularyFilm(checkedFilms);
     }
@@ -56,7 +57,7 @@ const ShelfOne = () => {
 
   return (
     <div className="container_shelf_one">
-      <h2>Top avaliado</h2>
+      <h2>Recomendação!</h2>
       {popularyFilm && (
         <Slider {...settings}>
           {popularyFilm.map((item) => (
@@ -89,4 +90,4 @@ const ShelfOne = () => {
   );
 };
 
-export default ShelfOne;
+export default ShelfRecomentationPDP;

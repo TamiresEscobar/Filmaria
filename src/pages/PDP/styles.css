@@ -1,3 +1,125 @@
-div{
-    color: #ffff
+.page-pdp{
+    color: #ffff;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+
+}
+.pdp-container{
+    display: flex;
+    margin-top: 5rem;
+}
+.pdp-block-one {
+    width: 60%;
+    /* border: .2px solid; */
+    margin: 0 5px;
+}
+.pdp-block-two{
+    width: 40%;
+    border: 0.1px solid;
+    border-bottom: none;
+    border-radius: 5px;
+    border-right: none;
+    border-left: none;
+    display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+.pdp-block-one img{
+    width: 100%;
+}
+.details_pdp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 5px;
+}
+.infos_details_film_pdp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0px 5px;
+}
+
+
+.tagp {
+	text-transform: uppercase;
+	letter-spacing: .3em;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	border: 4px double rgba(255,255,255,.25);
+	border-width: 4px 0;
+	padding: 1.5em 0em;
+    gap: 10px;
+	/* position: absolute; */
+	top: 20%;
+	/* left: 50%; */
+	/* width: 40em; */
+	/* margin: 0 0 0 -20em; */
+  
+}
+.tagp span {
+
+    font: 700 2em/1 "Oswald", sans-serif;
+    letter-spacing: 0;
+    padding: .25em  .25em;
+    display: block;
+    margin: 0 auto;
+    /* text-shadow: 0 0 80px rgba(255,255,255,.5); */
+
+    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+
+}
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+.texts_infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.texts_infos span{
+    font-size: 18px;
+}
+.texts_infos p{
+    font-size: 14px;
+    text-align: justify;
+    width: 100%;
+    padding: 0 30px;
+}
+.stamps{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+@media (max-width: 640px){
+    .page-pdp{
+        max-height: 500px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .pdp-container{
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 0px;
+    }
+    .pdp-block-one, .pdp-block-two{
+        width: 100%;
+        padding: 0px 1px;
+    }
 }
