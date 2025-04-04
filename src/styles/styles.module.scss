@@ -1,0 +1,45 @@
+// variaveis
+
+// fonts
+:root {
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-30: 30px;
+
+  --font-family-cursive: cursive;
+
+  // colors🧮
+  --text-color-blue: #0000ff;
+  --text-color-blue-light: #2263a4;
+  --text-color-black: #202124;
+  --text-color-dark: #e8eaed;
+  --grayscale-gs-secondary-1: #68687b;
+  --grayscale-gs-secondary-2: #a1a1af;
+  --grayscale-gs-tetriary-1: #b0b0bc;
+  --grayscale-gs-tetriary-2: #d0d0d7;
+  --grayscale-gs-quarterly-1: #dfdfe4;
+  --grayscale-gs-background-darker: #f3f4f7;
+  --grayscale-gs-background: #fafafa;
+  --grayscale-gs-quarterly-2: #fdfdfd;
+  --grayscale-gs-white: #fff;
+
+  --card-link-hover-color: #2263a4;
+
+  --shadow-gray: #d1d0d0;
+  --shadow-gray-opacity: #8080805e;
+
+  // card
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --card-border-radius: 8px;
+  --card-margin: 8px;
+  --card-border-color: blue;
+  --card-width: 13rem;
+  --card-height: 250px;
+
+  // buttons
+  --card-insert-list-user-favorites: #f46355;
+}

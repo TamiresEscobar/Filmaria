@@ -15,5 +15,21 @@ body {
   align-items: center;
   flex-direction: column;
 }
+::-webkit-scrollbar{
+  width: 10px; /* Largura da barra de rolagem vertical */
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Cor do fundo da barra de rolagem */
+  border-radius: 10px; /* Borda arredondada para o track */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Cor do "polegar" (parte que o usuário arrasta) */
+  border-radius: 10px; /* Borda arredondada para o polegar */
+  border: 2px solid #f1f1f1; /* Borda em volta do polegar */
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Cor do "polegar" ao passar o mouse */
+}
 
 

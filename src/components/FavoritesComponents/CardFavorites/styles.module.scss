@@ -1,0 +1,103 @@
+/* Variáveis de Estilo */
+@import '../../../styles/styles.module.scss';
+
+
+/* Estrutura Principal */
+.col_right_favorites_page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 16px;
+}
+
+/* Estilos do Card */
+.configStylesCard {
+  width: var(--card-width);
+  border: 1px solid var(--card-width);
+  margin: var(--card-margin);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  /* Efeito de Hover */
+  &:hover {
+    box-shadow: var(--card-shadow);
+  }
+
+  /* Imagem do Card */
+  .cardImgFavorites {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  /* Corpo do Card */
+  .cardbody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    height: 100%;
+    max-width: var(--card-width);
+    max-height: var(--card-height);
+  }
+
+  /* Título do Card */
+  .cardTitle {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-family: var(--font-family-cursive);
+  }
+
+  /* Links do Card */
+  .card-link {
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--card-link-hover-color);
+      text-decoration: underline;
+    }
+  }
+
+  /* Botões */
+  .buttonAddListUserFavorites,
+  .buttonRemoveListUserFavorites {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: var(--grayscale-gs-tetriary-1);
+
+    &:hover {
+      background-color: var(--card-insert-list-user-favorites);
+      color: #fff;
+    }
+  }
+
+  /* Link para detalhes do filme */
+  .linkToPdpCardFavorites {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--card-insert-list-user-favorites);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+

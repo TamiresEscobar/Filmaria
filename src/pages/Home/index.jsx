@@ -1,7 +1,9 @@
 import React from "react";
-import './styles.css'
+
 import BannerHome from "../../components/HomeComponents/BannerHome";
 import ShelfOne from "../../components/HomeComponents/ShelfOne";
+
+import './styles.css'
 
 const Home = () => {
 

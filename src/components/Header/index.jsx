@@ -1,13 +1,59 @@
-import React from "react";
-import './styles.css'
-import {Link} from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { BsFillHeartFill } from "react-icons/bs";
+import { FaRegCircleUser } from "react-icons/fa6";
+
+
+import "./styles.css";
+
 const Header = () => {
-    return(
-        <header>
-            <Link to='/' className="logo">Prime Flix</Link>
-            {/* <img src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg" alt="" srcset="" /> */}
-            <Link to='/favoritos' className="favoritos">Meus filmes</Link>
-        </header>
-    )
-}
-export default Header
+  const [countItens, setCountItens] = useState(0);
+
+  // Função para atualizar o contador de itens no localStorage
+  const updateCountItens = () => {
+    const itemInFavorites = localStorage.getItem('@myfavorites');
+    if (itemInFavorites) {
+      const totalItens = JSON.parse(itemInFavorites);
+      setCountItens(totalItens.length);
+    } else {
+      setCountItens(0);
+    }
+  };
+
+  useEffect(() => {
+    // Atualiza o contador quando o componente é montado
+    updateCountItens();
+
+    // Adiciona o listener para o evento de alteração do localStorage
+    const handleStorageChange = (e) => {
+      if (e.key === '@myfavorites') {
+        updateCountItens();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    // Limpeza do event listener
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
+
+  return (
+    <header className="headePage">
+      <Link to="/" className="logo">
+        Prime Flix
+      </Link>
+      <div  className="favoritos">
+        <span className="countfavorites">{countItens}</span>
+        <BsFillHeartFill size={25} color="red" />
+      </div>
+      <Link to="/minha-conta" className="myAccount">
+        <span className="countfavorites"></span>
+        <FaRegCircleUser  size={25} color="#fdfdfd" />
+      </Link>
+    </header>
+  );
+};
+
+export default Header;

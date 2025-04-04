@@ -1,16 +1,13 @@
-header{
+.headePage{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 40px;
-    /* background-color: #00000082; */
-    
-    background: linear-gradient(90deg, rgba(5, 5, 5, 0.986) 7%, rgba(245,5,54,0.896796218487395) 41%, rgba(255,145,0,0.8743872549019608) 89%);
+    background: linear-gradient(90deg, rgba(255,145,0,0.8743872549019608) 7%, rgba(245,5,54,0.896796218487395) 41%, rgba(5, 5, 5, 0.986) 89%);
     background-color: yellow;
     padding: 0 10px;
     opacity: 0.95;
-    /* position: absolute; */
     top: 0;
     z-index: 9;
 }
@@ -23,9 +20,14 @@ header{
 }
 .favoritos{
     cursor: pointer;
-    background-color: #cecfcc;
     padding: 5px 14px;
     text-decoration: none;
-    color: #000000;
-    border-radius: 8px;
+    display: flex;
+}
+.countfavorites{
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    margin: -7%;
+    z-index: 9;
 }

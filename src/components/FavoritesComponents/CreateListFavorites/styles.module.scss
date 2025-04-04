@@ -1,0 +1,39 @@
+@import '../../../styles/styles.module.scss';
+
+.containerInputCreatListFavorites{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+.inputCreatListFavorites{
+    width: 70%;
+    background-color: transparent;
+    height: 100%;
+    border: hidden;
+    border-bottom: 1.5px solid var( --grayscale-gs-tetriary-1);
+    color: #fff;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 10px;
+}
+.inputCreatListFavorites:focus{
+    border: hidden;
+    outline: none;
+    border-bottom: 1.5px solid var( --grayscale-gs-tetriary-1);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 10px;
+    color: #fff;
+}
+.buttonInputCreatList{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grayscale-gs-background-darker);
+    color: black;
+    border-radius: 8px;
+}

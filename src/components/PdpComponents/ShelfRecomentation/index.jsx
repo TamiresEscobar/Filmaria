@@ -1,15 +1,20 @@
-import React, {useState, useEffect} from "react";
-import "../../HomeComponents/ShelfOne/styles.css";
+import React, { useState, useEffect } from "react";
+
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import api from "../../../api/index";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../../HomeComponents/ShelfOne/styles.css";
 
-import { Link } from "react-router-dom";
+const ShelfRecomentationPDP = ({ recomendationChildrenComponent }) => {
+  const dateReacomedation = recomendationChildrenComponent.id;
 
-const ShelfRecomentationPDP = ({recomendationChildrenComponent}) => {
-  const dateReacomedation = recomendationChildrenComponent.id
-  
+  // const {id, title} = recomendationChildrenComponent
+  const paramsUrl = useNavigate();
+
   const [popularyFilm, setPopularyFilm] = useState([]);
 
   const options = {
@@ -20,14 +25,24 @@ const ShelfRecomentationPDP = ({recomendationChildrenComponent}) => {
 
   useEffect(() => {
     async function loadShelfOne() {
-      const response = await api.get(`movie/${dateReacomedation}/recommendations`, {
-        params: options,
-      });
+      const response = await api.get(
+        `movie/${dateReacomedation}/recommendations`,
+        {
+          params: options,
+        }
+      );
       const checkedFilms = response.data.results.slice(0, 15);
       setPopularyFilm(checkedFilms);
     }
     loadShelfOne();
   }, []);
+
+  const handleClickReload = (id) => {
+    paramsUrl(`/filme/${id}`);
+    window.location.reload();
+  };
+
+  
 
   const settings = {
     dots: false,
@@ -62,6 +77,7 @@ const ShelfRecomentationPDP = ({recomendationChildrenComponent}) => {
         <Slider {...settings}>
           {popularyFilm.map((item) => (
             <div key={item.id} className="card_shelf_one" refId={item.id}>
+              
               <div className="content_image-shelf">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
@@ -77,7 +93,10 @@ const ShelfRecomentationPDP = ({recomendationChildrenComponent}) => {
                   new Date(item?.release_date).toLocaleDateString("pt-BR")}
               </p>
 
-              <Link to={`/filme/${item?.id}`} className="link_pdp">
+              <Link
+                onClick={() => handleClickReload(item.id)}
+                className="link_pdp"
+              >
                 Saiba Mais
               </Link>
 

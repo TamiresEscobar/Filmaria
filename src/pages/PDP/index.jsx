@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
+
 import { useParams, useNavigate } from "react-router-dom";
-import "./styles.css";
+import { FcRating } from "react-icons/fc";
+import { FcCurrencyExchange } from "react-icons/fc";
+
 import api from "../../api/index";
 
 import DetailsTecFilm from "../../components/PdpComponents/DetailsTecFilm/index";
 import ShelfRecomentationPDP from '../../components/PdpComponents/ShelfRecomentation/index'
 
-import { FcRating } from "react-icons/fc";
-import { FcCurrencyExchange } from "react-icons/fc";
+import "./styles.css";
 
 const Pdp = () => {
   const [film, setFilm] = useState([]);
@@ -41,7 +43,7 @@ const Pdp = () => {
     return (err) => {
       console.error(err);
     };
-  }, []);
+  }, [id, navigate, options]);
 
   if (loading) {
     return (

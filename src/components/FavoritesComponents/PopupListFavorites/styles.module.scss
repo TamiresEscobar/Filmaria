@@ -1,0 +1,103 @@
+@import '../../../styles/styles.module.scss';
+
+.modalComponent{
+    position: fixed;
+    width: 40%;
+    height: auto;
+    display: flex;
+    background-color: aliceblue;
+    color: black;
+    justify-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 3px var(--shadow-gray);
+}
+.contentModalUserList{
+    overflow-y: scroll;
+    max-height: 320px;
+    padding: 10px;
+}
+.headerMdFavorites{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--shadow-gray-opacity);
+    margin-bottom: 40px;
+    box-shadow: 5px 2px 10px var(--shadow-gray-opacity); 
+}
+.titleHeaderModalFavorites{
+    background-color: transparent !important;
+    font-size: var(--font-size-16);
+}
+.closeHeaderMdFavorites{
+    cursor: pointer;
+}
+// com lista criada
+.listItemModal{
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+}
+.selectedItem {
+    background-color: #f46355; /* Altere para a cor desejada */
+    color: white;
+    border: 2px solid #f46355;
+  }
+  
+
+// sem lista criada
+.modalNotList{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.modalNotList__title{
+    width: 50%;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid var(--shadow-gray-opacity);
+    margin-bottom: 20px;
+    font-size: var(--font-size-18);
+}
+.modalNotList__instruction{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.modalNotList__instructionText{
+    font-family: var(--font-family-cursive);
+
+}
+.modalButtons{
+    display: flex;
+    justify-content: space-evenly;
+    height: 40px;
+    background-color: var( --grayscale-gs-tetriary-2);
+    border-bottom-right-radius: var(--card-border-radius);
+    border-bottom-left-radius: var(--card-border-radius);
+
+}
+.confirmButton, .cancelButton{
+    background-color: var(--grayscale-gs-secondary-1);
+    border-radius: var(--card-border-radius);
+    color: var(--text-color-dark);
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px;
+    border: none;
+}
+
+// mobile
+@media (max-width: 639px) {
+    .modalComponent{
+        width: 90%;
+        height: 50%;
+    }
+}

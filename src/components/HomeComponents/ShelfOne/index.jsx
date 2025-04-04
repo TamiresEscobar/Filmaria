@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import ButtonFavorites from "../../GlobalComponents/ButtonFavorites";
+
 import { Link } from "react-router-dom";
 
 const ShelfOne = () => {
@@ -61,6 +63,7 @@ const ShelfOne = () => {
         <Slider {...settings}>
           {popularyFilm.map((item) => (
             <div key={item.id} className="card_shelf_one" refId={item.id}>
+              <ButtonFavorites dataShelf={item} className='testea'/> 
               <div className="content_image-shelf">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}

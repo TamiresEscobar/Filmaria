@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./styles.css";
 import { TbArrowBigDownLinesFilled } from "react-icons/tb";
 import { TbArrowBigUpLinesFilled } from "react-icons/tb";
 import { BsFillInfoSquareFill } from "react-icons/bs";
+
+import "./styles.css";
 
 const DetailsTecFilm = ({ detailChildrenComponent }) => {
   const [openDetails, setOpenDetails] = useState(true);
@@ -24,16 +25,6 @@ const DetailsTecFilm = ({ detailChildrenComponent }) => {
     productionContries
   }
    
-  
-
-  const calcTimer = () => {
-    const timer = detailChildrenComponent?.runtime;
-    const hours = Math.floor(timer / 60);
-    const minutes = timer % 60;
-    const resultTimer = { hours, minutes };
-    setTimeFilm(resultTimer);
-
-  }
 
   const detailsReasolver = () => {
     const genres = detailChildrenComponent.genres.filter((item) => item.name);
@@ -53,7 +44,6 @@ const DetailsTecFilm = ({ detailChildrenComponent }) => {
 
   useEffect(() => {
     detailsReasolver()
-    calcTimer()
   }, []);
 
   const isOpenDetails = () => {
